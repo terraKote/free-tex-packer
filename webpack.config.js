@@ -36,15 +36,22 @@ if (argv.build) {
         outputDir = '../electron/www/';
     }
 
-    plugins.push(new CopyWebpackPlugin([{from: 'src/client/resources', to: outputDir}]));
+    plugins.push(new CopyWebpackPlugin({
+        patterns: [
+            {from: 'src/client/resources', to: outputDir}
+        ],
+    }));
 
     devtool = false;
     output = outputDir + 'static/js/index.js';
     debug = false;
-}
-else {
+} else {
     entry.push('webpack-dev-server/client?http://localhost:4000');
-    plugins.push(new CopyWebpackPlugin([{from: 'src/client/resources', to: './'}]));
+    plugins.push(new CopyWebpackPlugin({
+        patterns: [
+            {from: 'src/client/resources', to: './'}
+        ],
+    }));
 }
 
 let config = {
@@ -84,7 +91,15 @@ let config = {
 if (target === 'electron-renderer') {
     config.resolve = {alias: {'platform': path.resolve(__dirname, './src/client/platform/electron')}};
 } else {
-    config.resolve = {alias: {'platform': path.resolve(__dirname, './src/client/platform/web')}};
+    config.resolve = {
+        alias: {
+            'platform': path.resolve(__dirname, './src/client/platform/web')
+        },
+        fallback: {
+            "timers": false,
+            "stream": false
+        }
+    };
 }
 
 module.exports = config;
