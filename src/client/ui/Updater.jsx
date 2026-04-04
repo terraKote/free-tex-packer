@@ -20,6 +20,8 @@ class Updater extends React.Component {
         this.doSkip = this.doSkip.bind(this);
         this.install = this.install.bind(this);
         
+        this.downloadProgressRef = React.createRef();
+        
         Observer.on(GLOBAL_EVENT.DOWNLOAD_PROGRESS_CHANGED, this.changeDownloadProgress, this);
         
         this.skippedVersion = Storage.load(STORAGE_SKIPPED_VERSIONS_KEY);
@@ -70,7 +72,7 @@ class Updater extends React.Component {
                         ?
                         (
                             <div className="updater-download">
-                                <div ref="downloadProgress" className="updater-download-progress" style={{width: this.state.downloadProgress+"%"}}></div>
+                                <div ref={this.downloadProgressRef} className="updater-download-progress" style={{width: this.state.downloadProgress+"%"}}></div>
                             </div>
                         )
                         :

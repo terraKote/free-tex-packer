@@ -14,6 +14,11 @@ class EditCustomExporter extends React.Component {
         super(props);
         
         this.save = this.save.bind(this);
+        
+        this.contentRef = React.createRef();
+        this.allowTrimRef = React.createRef();
+        this.allowRotationRef = React.createRef();
+        this.fileExtRef = React.createRef();
     }
 
     close() {
@@ -57,18 +62,18 @@ class EditCustomExporter extends React.Component {
                     </div>
                     
                     <div>
-                        <textarea ref="content" className="edit-custom-exporter-data" defaultValue={exporter.content}></textarea>
+                        <textarea ref={this.contentRef} className="edit-custom-exporter-data" defaultValue={exporter.content}></textarea>
                     </div>
                     
                     <div>
                         <b>{I18.f("ALLOW_TRIM")}</b>
-                        <input ref="allowTrim" className="border-color-gray" type="checkbox" defaultChecked={exporter.allowTrim ? "checked" : ""}/>
+                        <input ref={this.allowTrimRef} className="border-color-gray" type="checkbox" defaultChecked={exporter.allowTrim ? "checked" : ""}/>
 
                         <b>{I18.f("ALLOW_ROTATION")}</b>
-                        <input ref="allowRotation" className="border-color-gray" type="checkbox" defaultChecked={exporter.allowRotation ? "checked" : ""}/>
+                        <input ref={this.allowRotationRef} className="border-color-gray" type="checkbox" defaultChecked={exporter.allowRotation ? "checked" : ""}/>
 
                         <b>{I18.f("FILE_EXT")}</b>
-                        <input ref="fileExt" className="border-color-gray" type="text" defaultValue={exporter.fileExt}/>
+                        <input ref={this.fileExtRef} className="border-color-gray" type="text" defaultValue={exporter.fileExt}/>
                     </div>
                     
                     <div className="edit-custom-exporter-controls">
