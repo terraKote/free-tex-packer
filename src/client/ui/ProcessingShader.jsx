@@ -6,13 +6,14 @@ import I18 from '../utils/I18';
 class ProcessingShader extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.showTimer = null;
+        this.shaderRef = React.createRef();
     }
 
     componentDidMount() {
-        let shader = ReactDOM.findDOMNode(this.refs.shader);
-        if(shader) {
+        let shader =this.shaderRef.current;
+        if (shader) {
             shader.style.visibility = "hidden";
 
             this.showTimer = setTimeout(() => {
@@ -27,7 +28,7 @@ class ProcessingShader extends React.Component {
 
     render() {
         return (
-            <div ref="shader" className="processing-shader color-white">
+            <div ref={this.shaderRef} className="processing-shader color-white">
                 <div className="processing-content">
                     {I18.f("PLEASE_WAIT")}
                 </div>

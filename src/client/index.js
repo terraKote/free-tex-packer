@@ -1,32 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
-import I18 from './utils/I18';
-import APP from './APP';
+import I18 from './utils/I18.js';
+import APP from './APP.js';
 import MainLayout from './ui/MainLayout.jsx';
 
-import Storage from './utils/Storage';
-import {Observer, GLOBAL_EVENT} from './Observer';
+import Storage from './utils/Storage.js';
+import {Observer, GLOBAL_EVENT} from './Observer.js';
 
 import languages from './resources/static/localization/languages.json';
 
-import Controller from 'platform/Controller';
+import Controller from 'platform/Controller.js';
 
 let app = null;
-let layout = null;
+let root = null;
 
 const STORAGE_LANGUAGE_KEY = "language";
 
 function run() {
     Controller.init();
-    if(PLATFORM === "electron") {
+    if (PLATFORM === "electron") {
         injectCss("static/css/index-electron.css");
     }
     loadLocalization();
 }
 
 function loadLocalization() {
-    for(let i = 1; i < languages.length; i++) {
+    for (let i = 1; i < languages.length; i++) {
         I18.supportedLanguages.push(languages[i].lang);
     }
     I18.path = "static/localization";
@@ -41,7 +40,9 @@ function loadLocalization() {
 
 function renderLayout() {
     Controller.updateLocale();
-    layout = ReactDOM.render(React.createElement(MainLayout), document.getElementById("root"));
+    const rootElement = document.getElementById("root");
+    root = ReactDOM.createRoot(rootElement);
+    root.render(<MainLayout/>);
 }
 
 function injectCss(path) {
@@ -53,13 +54,13 @@ function injectCss(path) {
 }
 
 function setLocale(locale) {
-    if(!layout) return;
-    
+    if (!root) return;
+
     I18.init(locale);
     I18.load(() => {
         Storage.save(STORAGE_LANGUAGE_KEY, I18.currentLocale);
         Controller.updateLocale();
-        layout.forceUpdate();
+        root.render(<MainLayout/>);
     });
 }
 

@@ -21,7 +21,8 @@ class PackResults extends React.Component {
         };
 
         this.rangeRef = React.createRef();
-        this.wheelRef = React.createRef();        
+        this.wheelRef = React.createRef();   
+        this.spritesPlayerRef = React.createRef();
         
         this.setBack = this.setBack.bind(this);
         this.changeOutlines = this.changeOutlines.bind(this);
@@ -122,7 +123,7 @@ class PackResults extends React.Component {
                             {views}
                         </div>
                         <div className={!this.state.playerVisible ? "block-hidden" : "block-visible"}>
-                            <SpritesPlayer ref="spritesPlayer" data={this.state.packResult} start={this.state.playerVisible} textureBack={this.state.textureBack} />
+                            <SpritesPlayer ref={this.spritesPlayerRef} data={this.state.packResult} start={this.state.playerVisible} textureBack={this.state.textureBack} />
                         </div>
                     </div>
                     

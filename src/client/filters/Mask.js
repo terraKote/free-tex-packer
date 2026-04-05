@@ -1,4 +1,4 @@
-import Filter from './Filter';
+import Filter from './Filter.js';
 
 class Mask extends Filter {
     constructor() {

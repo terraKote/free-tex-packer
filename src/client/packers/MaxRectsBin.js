@@ -1,5 +1,5 @@
-import Packer from "./Packer";
-import Rect from "../math/Rect";
+import Packer from "./Packer.js";
+import Rect from "../math/Rect.js";
 
 const METHOD = {
     BestShortSideFit: "BestShortSideFit",

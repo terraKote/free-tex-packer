@@ -1,10 +1,9 @@
 import React from 'react';
 
-import {Observer, GLOBAL_EVENT} from '../Observer';
-import I18 from '../utils/I18';
+import {Observer, GLOBAL_EVENT} from '../Observer.js';
+import I18 from '../utils/I18.js';
 
 import appInfo from '../../../package.json';
-import exporters from "../exporters";
 
 class About extends React.Component {
     constructor(props) {

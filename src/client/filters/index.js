@@ -1,6 +1,6 @@
-import Filter from './Filter';
-import Mask from './Mask';
-import Grayscale from './Grayscale';
+import Filter from './Filter.js';
+import Mask from './Mask.js';
+import Grayscale from './Grayscale.js';
 
 const list = [
     Filter,

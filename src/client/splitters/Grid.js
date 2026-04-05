@@ -1,4 +1,4 @@
-import Splitter from './Splitter';
+import Splitter from './Splitter.js';
 
 class Grid extends Splitter {
     static check(data, cb) {

@@ -1,4 +1,4 @@
-import { GET } from './ajax';
+import { GET } from './ajax.js';
 
 let _currentLocale = "en";
 let _supportedLanguages = ["en"];

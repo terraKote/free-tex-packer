@@ -12,7 +12,7 @@ import Updater from './Updater.jsx';
 import EditCustomExporter from './EditCustomExporter.jsx';
 import SheetSplitter from './SheetSplitter.jsx';
 
-import {Observer, GLOBAL_EVENT} from '../Observer';
+import {Observer, GLOBAL_EVENT} from '../Observer.js';
 
 class MainLayout extends React.Component {
     constructor(props) {
