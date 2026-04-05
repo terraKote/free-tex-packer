@@ -1,5 +1,5 @@
-import {POST} from "../../utils/ajax";
-import I18 from "../../utils/I18";
+import {POST} from "../../utils/ajax.js";
+import I18 from "../../utils/I18.js";
 import appInfo from '../../../../package.json';
 
 class Tinifyer {

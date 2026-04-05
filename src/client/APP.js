@@ -1,11 +1,11 @@
-import { Observer, GLOBAL_EVENT } from './Observer';
-import PackProcessor from './PackProcessor';
-import TextureRenderer from './utils/TextureRenderer';
-import { getFilterByType } from './filters';
-import I18 from './utils/I18';
-import { startExporter } from './exporters';
-import Tinifyer from 'platform/Tinifyer';
-import Downloader from 'platform/Downloader';
+import { Observer, GLOBAL_EVENT } from './Observer.js';
+import PackProcessor from './PackProcessor.js';
+import TextureRenderer from './utils/TextureRenderer.js';
+import I18 from './utils/I18.js';
+import Tinifyer from 'platform/Tinifyer.js';
+import Downloader from 'platform/Downloader.js';
+import {getFilterByType} from "./filters/index.js";
+import {startExporter} from "./exporters/index.js";
 
 let INSTANCE = null;
 

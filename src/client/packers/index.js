@@ -1,6 +1,6 @@
-import MaxRectsPacker from "./MaxRectsPacker";
-import MaxRectsBin from "./MaxRectsBin";
-import OptimalPacker from "./OptimalPacker";
+import MaxRectsPacker from "./MaxRectsPacker.js";
+import MaxRectsBin from "./MaxRectsBin.js";
+import OptimalPacker from "./OptimalPacker.js";
 
 const list = [
     MaxRectsBin,

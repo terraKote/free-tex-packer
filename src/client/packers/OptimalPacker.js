@@ -1,4 +1,4 @@
-import Packer from "./Packer";
+import Packer from "./Packer.js";
 
 const METHOD = {
     Automatic: "Automatic"

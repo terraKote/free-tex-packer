@@ -1,6 +1,6 @@
 import list from './list.json';
 import appInfo from '../../../package.json';
-import {GET} from '../utils/ajax';
+import {GET} from '../utils/ajax.js';
 import mustache from 'mustache';
 import wax from '@jvitela/mustache-wax';
 

@@ -1,4 +1,4 @@
-import Splitter from './Splitter';
+import Splitter from './Splitter.js';
 
 import xmlParser from 'xml2js';
 

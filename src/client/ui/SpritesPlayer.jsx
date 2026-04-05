@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import I18 from '../utils/I18';
-import {GLOBAL_EVENT, Observer} from "../Observer";
-import {smartSortImages} from '../utils/common';
+import I18 from '../utils/I18.js';
+import {GLOBAL_EVENT, Observer} from "../Observer.js";
+import smartSortImages from '../utils/common.js';
 
 class SpritesPlayer extends React.Component {
     

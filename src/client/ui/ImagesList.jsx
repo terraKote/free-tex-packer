@@ -1,16 +1,15 @@
 import React, {createRef} from 'react';
-import ReactDOM from 'react-dom';
 
-import LocalImagesLoader from '../utils/LocalImagesLoader';
-import ZipLoader from '../utils/ZipLoader';
-import I18 from '../utils/I18';
+import LocalImagesLoader from '../utils/LocalImagesLoader.js';
+import ZipLoader from '../utils/ZipLoader.js';
+import I18 from '../utils/I18.js';
 
-import {Observer, GLOBAL_EVENT} from '../Observer';
+import {Observer, GLOBAL_EVENT} from '../Observer.js';
 import ImagesTree from './ImagesTree.jsx';
 
-import FileSystem from 'platform/FileSystem';
+import FileSystem from 'platform/FileSystem.js';
 
-import {smartSortImages} from '../utils/common';
+import smartSortImages from '../utils/common.js';
 
 let INSTANCE = null;
 

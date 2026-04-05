@@ -1,7 +1,7 @@
 import JSZip from 'jszip';
 
-import {Observer, GLOBAL_EVENT} from '../Observer';
-import I18 from './I18';
+import {Observer, GLOBAL_EVENT} from '../Observer.js';
+import I18 from './I18.js';
 
 class ZipLoader {
     

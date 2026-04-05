@@ -1,10 +1,10 @@
-import MaxRectsBinPack from './packers/MaxRectsBin';
-import OptimalPacker from './packers/OptimalPacker';
-import allPackers from './packers';
-import Trimmer from './utils/Trimmer';
-import TextureRenderer from './utils/TextureRenderer';
+import MaxRectsBinPack from './packers/MaxRectsBin.js';
+import OptimalPacker from './packers/OptimalPacker.js';
+import allPackers from './packers/index.js';
+import Trimmer from './utils/Trimmer.js';
+import TextureRenderer from './utils/TextureRenderer.js';
 
-import I18 from './utils/I18';
+import I18 from './utils/I18.js';
 
 class PackProcessor {
 

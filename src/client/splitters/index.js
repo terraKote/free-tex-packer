@@ -1,9 +1,9 @@
-import Grid from './Grid';
-import JsonHash from './JsonHash';
-import JsonArray from './JsonArray';
-import XML from './XML';
-import UIKit from './UIKit';
-import Spine from './Spine';
+import Grid from './Grid.js';
+import JsonHash from './JsonHash.js';
+import JsonArray from './JsonArray.js';
+import XML from './XML.js';
+import UIKit from './UIKit.js';
+import Spine from './Spine.js';
 
 const list = [
     Grid,

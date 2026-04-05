@@ -1,20 +1,15 @@
 import React, {createRef} from 'react';
-import ReactDOM from 'react-dom';
 
-import Storage from '../utils/Storage';
+import Storage from '../utils/Storage.js';
 
-import exporters from '../exporters';
-import {getExporterByType} from '../exporters';
-import packers from '../packers';
-import {getPackerByType} from '../packers';
-import filters from '../filters';
-import {getFilterByType} from '../filters';
+import I18 from '../utils/I18.js';
 
-import I18 from '../utils/I18';
+import {Observer, GLOBAL_EVENT} from '../Observer.js';
 
-import {Observer, GLOBAL_EVENT} from '../Observer';
-
-import FileSystem from 'platform/FileSystem';
+import FileSystem from 'platform/FileSystem.js';
+import exporters, {getExporterByType} from "../exporters/index.js";
+import filters, {getFilterByType} from "../filters/index.js";
+import packers, {getPackerByType} from "../packers/index.js";
 
 const STORAGE_OPTIONS_KEY = "pack-options";
 const STORAGE_CUSTOM_EXPORTER_KEY = "custom-exporter";
